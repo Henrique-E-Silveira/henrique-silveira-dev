@@ -5,10 +5,10 @@ import { ThemeToggle } from "./theme-toggle"
 
 const navItems = [
   { name: "Início", href: "#home" },
+  { name: "Contato", href: "#contact" },
   { name: "Sobre", href: "#about" },
   { name: "Habilidades", href: "#skills" },
   { name: "Projetos", href: "#projects" },
-  { name: "Contato", href: "#contact" },
 ]
 
 export function Navigation() {
@@ -22,14 +22,14 @@ export function Navigation() {
       
       // Update active section based on scroll position
       const sections = navItems.map(item => item.href.slice(1))
-      const currentSection = sections.find(section => {
-        const element = document.getElementById(section)
-        if (element) {
-          const rect = element.getBoundingClientRect()
-          return rect.top <= 100 && rect.bottom >= 100
-        }
-        return false
-      })
+        const currentSection = sections.find(section => {
+          const element = document.getElementById(section)
+          if (element) {
+            const rect = element.getBoundingClientRect()
+            return rect.top <= 80 && rect.bottom >= 80
+          }
+          return false
+        })
       
       if (currentSection) {
         setActiveSection(currentSection)

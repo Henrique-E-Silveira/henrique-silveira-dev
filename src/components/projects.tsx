@@ -188,28 +188,6 @@ export function Projects() {
             ))}
           </div>
 
-          {/* Call to Action */}
-          <div className="mt-16 text-center">
-            <Card className="card-hover border-primary/20 max-w-2xl mx-auto">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-4">
-                  <span className="gradient-text">Quer ver mais?</span>
-                </h3>
-                <p className="text-muted-foreground mb-6">
-                  Estes são apenas alguns dos meus projetos. Confira meu GitHub 
-                  para ver o código completo e outros trabalhos.
-                </p>
-                <Button
-                  size="lg"
-                  className="bg-gradient-primary hover:shadow-glow transition-all duration-300"
-                  onClick={() => window.open("https://github.com/Henrique-E-Silveira", "_blank")}
-                >
-                  <Github className="w-5 h-5 mr-2" />
-                  Ver todos os projetos
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
         </div>
       </div>
     </section>

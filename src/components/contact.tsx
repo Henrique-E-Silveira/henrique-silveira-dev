@@ -148,28 +148,6 @@ export function Contact() {
                 ))}
               </div>
 
-              {/* Quick Actions */}
-              <div className="space-y-4">
-                <h4 className="font-semibold text-lg">Ações Rápidas</h4>
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <Button
-                    variant="outline"
-                    className="flex-1 border-primary/30 hover:border-primary hover:bg-primary/10"
-                    onClick={() => window.open("https://www.linkedin.com/in/henrique-silveira-dev/", "_blank")}
-                  >
-                    <Linkedin className="w-4 h-4 mr-2" />
-                    LinkedIn
-                  </Button>
-                  <Button
-                    variant="outline"
-                    className="flex-1 border-primary/30 hover:border-primary hover:bg-primary/10"
-                    onClick={() => window.open("https://github.com/Henrique-E-Silveira", "_blank")}
-                  >
-                    <Github className="w-4 h-4 mr-2" />
-                    GitHub
-                  </Button>
-                </div>
-              </div>
             </div>
 
             {/* Contact Form */}

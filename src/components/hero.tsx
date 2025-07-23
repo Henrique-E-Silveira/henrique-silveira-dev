@@ -60,15 +60,6 @@ export function Hero() {
               variant="outline"
               size="lg"
               className="rounded-full border-primary/30 hover:border-primary hover:bg-primary/10 transition-all duration-300"
-              onClick={() => window.open("https://github.com/Henrique-E-Silveira", "_blank")}
-            >
-              <Github className="w-5 h-5 mr-2" />
-              GitHub
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="rounded-full border-primary/30 hover:border-primary hover:bg-primary/10 transition-all duration-300"
               onClick={() => window.open("https://www.linkedin.com/in/henrique-silveira-dev/", "_blank")}
             >
               <Linkedin className="w-5 h-5 mr-2" />
