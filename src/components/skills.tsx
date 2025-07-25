@@ -6,10 +6,16 @@ const skills = [
   { name: "HTML", level: 98, color: "from-orange-500 to-red-500" },
   { name: "CSS", level: 95, color: "from-blue-500 to-blue-600" },
   { name: "JavaScript", level: 78, color: "from-yellow-500 to-orange-500" },
+  { name: "C#", level: 40, color: "from-purple-500 to-purple-600" },
+  { name: "Node.js", level: 45, color: "from-green-500 to-green-600" },
+  { name: "React", level: 60, color: "from-cyan-500 to-cyan-600" },
+  { name: "TypeScript", level: 55, color: "from-blue-700 to-blue-800" },
+  { name: "Python", level: 30, color: "from-yellow-400 to-yellow-500" },
+  { name: "PHP", level: 45, color: "from-pink-400 to-pink-500" },
+  { name: "MongoDB", level: 20, color: "from-green-700 to-green-800" },
   { name: "MySQL", level: 75, color: "from-blue-600 to-blue-700" },
   { name: "SQL Server", level: 65, color: "from-red-600 to-red-700" },
   { name: "Flutter", level: 30, color: "from-cyan-400 to-blue-500" },
-  { name: "C#", level: 40, color: "from-purple-500 to-purple-600" },
 ]
 
 interface SkillBarProps {
@@ -37,7 +43,7 @@ function SkillBar({ skill, index, inView }: SkillBarProps) {
           <h3 className="text-lg font-semibold">{skill.name}</h3>
           <span className="text-2xl font-bold gradient-text">{skill.level}%</span>
         </div>
-        
+
         <div className="skill-bar">
           <div
             className={`skill-progress bg-gradient-to-r ${skill.color}`}
@@ -47,13 +53,13 @@ function SkillBar({ skill, index, inView }: SkillBarProps) {
             }}
           />
         </div>
-        
+
         {/* Level indicator */}
         <div className="mt-2 text-right">
           <span className="text-sm text-muted-foreground">
             {skill.level >= 90 && "Avançado"}
-            {skill.level >= 70 && skill.level < 90 && "Intermediário"}
-            {skill.level < 70 && "Básico"}
+            {skill.level >= 60 && skill.level < 90 && "Intermediário"}
+            {skill.level < 60 && "Básico"}
           </span>
         </div>
       </CardContent>
@@ -110,8 +116,8 @@ export function Skills() {
                   <span className="gradient-text">Foco em Back-end</span>
                 </h3>
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  Embora tenha conhecimento em front-end, minha paixão está no desenvolvimento 
-                  back-end. Adoro trabalhar com lógica de negócio, APIs, bancos de dados e 
+                  Embora tenha conhecimento em front-end, minha paixão está no desenvolvimento
+                  back-end. Adoro trabalhar com lógica de negócio, APIs, bancos de dados e
                   arquitetura de sistemas.
                 </p>
                 <div className="grid md:grid-cols-3 gap-6 text-center">
