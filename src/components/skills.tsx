@@ -6,10 +6,10 @@ const skills = [
   { name: "HTML", level: 98, color: "from-orange-500 to-red-500" },
   { name: "CSS", level: 95, color: "from-blue-500 to-blue-600" },
   { name: "JavaScript", level: 78, color: "from-yellow-500 to-orange-500" },
-  { name: "MySQL", level: 80, color: "from-blue-600 to-blue-700" },
-  { name: "SQL Server", level: 70, color: "from-red-600 to-red-700" },
-  { name: "Flutter", level: 60, color: "from-cyan-400 to-blue-500" },
-  { name: "C#", level: 45, color: "from-purple-500 to-purple-600" },
+  { name: "MySQL", level: 75, color: "from-blue-600 to-blue-700" },
+  { name: "SQL Server", level: 65, color: "from-red-600 to-red-700" },
+  { name: "Flutter", level: 30, color: "from-cyan-400 to-blue-500" },
+  { name: "C#", level: 40, color: "from-purple-500 to-purple-600" },
 ]
 
 interface SkillBarProps {
