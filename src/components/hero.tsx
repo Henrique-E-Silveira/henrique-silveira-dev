@@ -43,7 +43,7 @@ export function Hero() {
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground mb-2 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            17 anos • Desenvolvedor Back-end
+            18 anos • Desenvolvedor Back-end
           </p>
 
           {/* Impact Statement */}

@@ -11,7 +11,7 @@ const skills = [
   { name: "React", level: 60, color: "from-cyan-500 to-cyan-600" },
   { name: "TypeScript", level: 55, color: "from-blue-700 to-blue-800" },
   { name: "Python", level: 30, color: "from-yellow-400 to-yellow-500" },
-  { name: "PHP", level: 45, color: "from-pink-400 to-pink-500" },
+  { name: "PHP", level: 20, color: "from-pink-400 to-pink-500" },
   { name: "MongoDB", level: 20, color: "from-green-700 to-green-800" },
   { name: "MySQL", level: 75, color: "from-blue-600 to-blue-700" },
   { name: "SQL Server", level: 65, color: "from-red-600 to-red-700" },
