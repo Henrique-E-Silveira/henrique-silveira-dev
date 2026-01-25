@@ -33,7 +33,7 @@ export function Footer() {
 
             {/* Quote */}
             <blockquote className="text-lg italic text-muted-foreground max-w-md mx-auto">
-              "O código é poesia em movimento, transformando ideias em realidade digital."
+              "Focado em construir sistemas escaláveis e resolver problemas reais através do código."
             </blockquote>
 
             {/* Copyright */}

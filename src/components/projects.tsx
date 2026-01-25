@@ -1,72 +1,75 @@
-import { useInView } from "react-intersection-observer"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Github, ExternalLink, Database, Server, Code } from "lucide-react"
+import { useInView } from "react-intersection-observer";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Github, ExternalLink, Database, Server, Code, Terminal } from "lucide-react";
 
 const projects = [
   {
     id: 1,
-    title: "Sistema de Gerenciamento Escolar",
-    description: "API REST completa para gestão de estudantes, professores e notas. Desenvolvida em C# com ASP.NET Core, implementando autenticação JWT, CRUD completo e relatórios dinâmicos.",
-    technologies: ["C#", "ASP.NET Core", "SQL Server", "Entity Framework"],
+    title: "Crypto Tracker API",
+    description:
+      "API de alta performance para monitoramento de criptomoedas em tempo real. Desenvolvida em C# com ASP.NET Core, integra-se à CoinGecko para fornecer cotações, variações de mercado e detalhes técnicos de ativos digitais.",
+    technologies: ["C#", "ASP.NET Core", "REST Client", "JSON Serialization"],
     category: "Back-end",
     icon: Database,
     features: [
-      "Autenticação e autorização com JWT",
-      "CRUD completo de entidades",
-      "Relatórios em PDF",
-      "API RESTful documentada"
+      "Integração com API externa (CoinGecko)",
+      "Consumo Assíncrono de dados (Async/Await)",
+      "Tratamento de erros e Status Codes REST",
+      "Filtros de busca e ordenação de ativos",
     ],
-    githubUrl: "https://github.com/Henrique-E-Silveira",
+    githubUrl: "https://github.com/Henrique-E-Silveira/API_Cripto",
     liveUrl: null,
-    color: "from-purple-500 to-purple-600"
+    color: "from-orange-500 to-yellow-600",
   },
   {
     id: 2,
-    title: "E-commerce Backend",
-    description: "Sistema robusto de e-commerce com carrinho de compras, processamento de pedidos e gestão de estoque. Implementado com padrões de arquitetura limpa e princípios SOLID.",
-    technologies: ["C#", "MySQL", "ASP.NET Web API", "Swagger"],
-    category: "Back-end",
-    icon: Server,
+    title: "Crypto Dashboard UI",
+    description:
+      "Interface moderna para monitoramento de ativos digitais. Focado em UX/UI, o projeto apresenta um painel interativo com gráficos, listagem de ativos e conversão de moedas, simulando um ambiente real de trading.",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Lucide Icons"],
+    category: "Front-end",
+    icon: Code,
     features: [
-      "Gestão de produtos e categorias",
-      "Carrinho de compras persistente",
-      "Sistema de pedidos",
-      "Controle de estoque automatizado"
+      "Interface responsiva (Mobile First)",
+      "Simulação de dados (Mocked Data) em tempo real",
+      "Gráficos interativos de performance",
+      "Design moderno com suporte a Dark Mode",
     ],
-    githubUrl: "https://github.com/Henrique-E-Silveira",
-    liveUrl: null,
-    color: "from-blue-500 to-blue-600"
+    githubUrl: "https://github.com/Henrique-E-Silveira/crypto-health-hub",
+    liveUrl: "https://crypto-health-hub-five.vercel.app/",
+    color: "from-blue-400 to-emerald-500",
   },
   {
     id: 3,
-    title: "App Mobile Flutter",
-    description: "Aplicativo móvel de lista de tarefas com sincronização em nuvem. Interface intuitiva com Material Design e integração com backend próprio desenvolvido em C#.",
-    technologies: ["Flutter", "Dart", "Firebase", "C# API"],
-    category: "Mobile",
-    icon: Code,
+    title: "Projeto em Desenvolvimento",
+    description:
+      "Atualmente focado na construção de um sistema de microserviços com foco em alta disponibilidade. Explorando conceitos avançados de arquitetura, Docker e Mensageria (RabbitMQ).",
+    technologies: ["Docker", "RabbitMQ", "Microservices"],
+    category: "Estudo Ativo",
+    icon: Terminal,
     features: [
-      "Sincronização em tempo real",
-      "Interface Material Design",
-      "Notificações push",
-      "Modo offline"
+      "Arquitetura de Microserviços",
+      "Containerização com Docker",
+      "Comunicação assíncrona",
+      "Boas práticas de Clean Architecture",
     ],
-    githubUrl: "https://github.com/Henrique-E-Silveira",
+    githubUrl: "#",
     liveUrl: null,
-    color: "from-cyan-400 to-blue-500"
-  }
-]
+    color: "from-gray-600 to-gray-400", 
+  },
+];
 
 interface ProjectCardProps {
-  project: typeof projects[0]
-  index: number
-  inView: boolean
+  project: (typeof projects)[0];
+  index: number;
+  inView: boolean;
 }
 
 function ProjectCard({ project, index, inView }: ProjectCardProps) {
   return (
-    <Card 
+    <Card
       className={`card-hover border-primary/10 h-full transition-all duration-500 ${
         inView ? "animate-fade-in-up" : "opacity-0"
       }`}
@@ -75,7 +78,9 @@ function ProjectCard({ project, index, inView }: ProjectCardProps) {
       <CardContent className="p-8 h-full flex flex-col">
         {/* Header */}
         <div className="flex items-start justify-between mb-6">
-          <div className={`w-14 h-14 bg-gradient-to-r ${project.color} rounded-xl flex items-center justify-center`}>
+          <div
+            className={`w-14 h-14 bg-gradient-to-r ${project.color} rounded-xl flex items-center justify-center`}
+          >
             <project.icon className="w-7 h-7 text-white" />
           </div>
           <Badge variant="secondary" className="ml-4">
@@ -97,7 +102,10 @@ function ProjectCard({ project, index, inView }: ProjectCardProps) {
             </h4>
             <ul className="space-y-2">
               {project.features.map((feature, idx) => (
-                <li key={idx} className="flex items-center text-sm text-muted-foreground">
+                <li
+                  key={idx}
+                  className="flex items-center text-sm text-muted-foreground"
+                >
                   <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3 flex-shrink-0" />
                   {feature}
                 </li>
@@ -144,14 +152,14 @@ function ProjectCard({ project, index, inView }: ProjectCardProps) {
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }
 
 export function Projects() {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
-  })
+  });
 
   return (
     <section
@@ -166,7 +174,9 @@ export function Projects() {
       </div>
 
       <div className="container-custom section-padding relative z-10">
-        <div className={`transition-all duration-1000 ${inView ? "animate-fade-in-up" : "opacity-0"}`}>
+        <div
+          className={`transition-all duration-1000 ${inView ? "animate-fade-in-up" : "opacity-0"}`}
+        >
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="gradient-text">Projetos</span>
@@ -187,9 +197,8 @@ export function Projects() {
               />
             ))}
           </div>
-
         </div>
       </div>
     </section>
-  )
+  );
 }
