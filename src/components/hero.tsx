@@ -1,14 +1,14 @@
-import { ArrowDown, Github, Linkedin } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import henriqueProfile from "@/assets/henrique-profile.jpg"
+import { ArrowDown, FileText, Github, Linkedin } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import henriqueProfile from "@/assets/henrique-profile.jpg";
 
 export function Hero() {
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
+    const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      element.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
 
   return (
     <section
@@ -18,7 +18,10 @@ export function Hero() {
       {/* Background Decoration */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
+        <div
+          className="absolute -bottom-40 -left-40 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: "1s" }}
+        ></div>
       </div>
 
       <div className="container-custom section-padding relative z-10">
@@ -42,33 +45,62 @@ export function Hero() {
             <span className="text-foreground">da Silveira</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-muted-foreground mb-2 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+          <p
+            className="text-xl md:text-2xl text-muted-foreground mb-2 animate-fade-in"
+            style={{ animationDelay: "0.2s" }}
+          >
             18 anos • Desenvolvedor Back-end
           </p>
 
           {/* Impact Statement */}
-          <p className="text-lg md:text-xl max-w-3xl mx-auto mb-8 leading-relaxed text-foreground/90 animate-fade-in" style={{ animationDelay: "0.4s" }}>
+          <p
+            className="text-lg md:text-xl max-w-3xl mx-auto mb-8 leading-relaxed text-foreground/90 animate-fade-in"
+            style={{ animationDelay: "0.4s" }}
+          >
             Apaixonado por desenvolvimento back-end e sempre em busca de{" "}
-            <span className="gradient-text font-semibold">aprendizado contínuo</span>.
+            <span className="gradient-text font-semibold">
+              aprendizado contínuo
+            </span>
+            .
             <br />
             Pronto para contribuir como estagiário em projetos inovadores.
           </p>
 
           {/* Social Links */}
-          <div className="flex justify-center space-x-4 mb-12 animate-fade-in" style={{ animationDelay: "0.6s" }}>
+          <div
+            className="flex justify-center space-x-4 mb-12 animate-fade-in"
+            style={{ animationDelay: "0.6s" }}
+          >
             <Button
               variant="outline"
               size="lg"
               className="rounded-full border-primary/30 hover:border-primary hover:bg-primary/10 transition-all duration-300"
-              onClick={() => window.open("https://www.linkedin.com/in/henrique-silveira-dev/", "_blank")}
+              onClick={() =>
+                window.open(
+                  "https://www.linkedin.com/in/henrique-silveira-dev/",
+                  "_blank",
+                )
+              }
             >
               <Linkedin className="w-5 h-5 mr-2" />
               LinkedIn
             </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="rounded-full border-primary/30 hover:border-primary hover:bg-primary/10 transition-all duration-300"
+              onClick={() => window.open("./public/Henrique_Silveira_Curriculum.pdf", "_blank")}
+            >
+              <FileText className="w-5 h-5 mr-2" />
+              Baixar CV
+            </Button>
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mb-16 animate-fade-in" style={{ animationDelay: "0.8s" }}>
+          <div
+            className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mb-16 animate-fade-in"
+            style={{ animationDelay: "0.8s" }}
+          >
             <Button
               size="lg"
               className="rounded-full bg-gradient-primary hover:shadow-glow transition-all duration-300 px-8"
@@ -100,5 +132,5 @@ export function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,52 +1,52 @@
-import { useState, useEffect } from "react"
-import { Menu, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { ThemeToggle } from "./theme-toggle"
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "./theme-toggle";
 
 const navItems = [
   { name: "Início", href: "#home" },
-  { name: "Contato", href: "#contact" },
   { name: "Sobre", href: "#about" },
   { name: "Habilidades", href: "#skills" },
   { name: "Projetos", href: "#projects" },
-]
+  { name: "Contato", href: "#contact" },
+];
 
 export function Navigation() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [activeSection, setActiveSection] = useState("home")
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-      
-      // Update active section based on scroll position
-      const sections = navItems.map(item => item.href.slice(1))
-        const currentSection = sections.find(section => {
-          const element = document.getElementById(section)
-          if (element) {
-            const rect = element.getBoundingClientRect()
-            return rect.top <= 80 && rect.bottom >= 80
-          }
-          return false
-        })
-      
-      if (currentSection) {
-        setActiveSection(currentSection)
-      }
-    }
+      setIsScrolled(window.scrollY > 50);
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+      // Update active section based on scroll position
+      const sections = navItems.map((item) => item.href.slice(1));
+      const currentSection = sections.find((section) => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 80 && rect.bottom >= 80;
+        }
+        return false;
+      });
+
+      if (currentSection) {
+        setActiveSection(currentSection);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const scrollToSection = (href: string) => {
-    const element = document.getElementById(href.slice(1))
+    const element = document.getElementById(href.slice(1));
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      element.scrollIntoView({ behavior: "smooth" });
     }
-    setIsOpen(false)
-  }
+    setIsOpen(false);
+  };
 
   return (
     <nav
@@ -58,9 +58,7 @@ export function Navigation() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <span className="text-2xl font-bold gradient-text">
-              HE
-            </span>
+            <span className="text-2xl font-bold gradient-text">HE</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -127,5 +125,5 @@ export function Navigation() {
         )}
       </div>
     </nav>
-  )
+  );
 }
