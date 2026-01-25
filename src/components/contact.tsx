@@ -6,14 +6,14 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { useToast } from "@/hooks/use-toast"
-import { Mail, Github, Linkedin, MapPin, Phone, Send } from "lucide-react"
+import { Mail, Github, Linkedin, MapPin, Send } from "lucide-react"
 
 const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "henrique.silveira.dev@email.com",
-    href: "mailto:henrique.silveira.dev@email.com",
+    value: "silveirahenrique116@gmail.com",
+    href: "mailto:silveirahenrique116@gmail.com",
     color: "from-blue-500 to-blue-600"
   },
   {
@@ -58,15 +58,43 @@ export function Contact() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "e9397e02-c082-46d3-8617-21fd381492f5",
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          from_name: "Seu Portfólio", // Nome que aparecerá no remetente do e-mail
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        toast({
+          title: "Mensagem enviada!",
+          description: "Obrigado pelo contato. Retornarei em breve!",
+        })
+        setFormData({ name: "", email: "", subject: "", message: "" })
+      } else {
+        throw new Error("Erro ao enviar");
+      }
+    } catch (error) {
       toast({
-        title: "Mensagem enviada!",
-        description: "Obrigado pelo contato. Retornarei em breve!",
+        variant: "destructive",
+        title: "Erro no envio",
+        description: "Houve um problema ao enviar. Tente novamente ou use os links diretos.",
       })
-      setFormData({ name: "", email: "", subject: "", message: "" })
+    } finally {
       setIsSubmitting(false)
-    }, 1000)
+    }
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -107,7 +135,7 @@ export function Contact() {
                   <span className="gradient-text">Entre em Contato</span>
                 </h3>
                 <p className="text-muted-foreground leading-relaxed mb-8">
-                  Estou em busca de oportunidades de estágio em desenvolvimento back-end. 
+                  Estou em busca de oportunidades de estágio em desenvolvimento back-end e front-end. 
                   Se você tem uma vaga ou quer apenas conversar sobre tecnologia, 
                   ficarei feliz em responder!
                 </p>
@@ -147,7 +175,6 @@ export function Contact() {
                   </Card>
                 ))}
               </div>
-
             </div>
 
             {/* Contact Form */}

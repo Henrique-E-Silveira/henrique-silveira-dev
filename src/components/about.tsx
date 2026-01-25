@@ -37,7 +37,7 @@ export function About() {
                   <span className="gradient-text">Minha Motivação</span>
                 </h3>
                 <p className="text-muted-foreground leading-relaxed text-lg mb-6 text-center">
-                  Aos 17 anos, descobri minha paixão pela programação através do curso técnico em 
+                  Aos 16 anos, descobri minha paixão pela programação através do curso técnico em 
                   Desenvolvimento de Sistemas. O desenvolvimento back-end me fascina pela sua lógica, 
                   estrutura e o poder de criar soluções robustas que sustentam aplicações complexas.
                 </p>
