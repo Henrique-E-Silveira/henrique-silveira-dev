@@ -89,7 +89,9 @@ export function Hero() {
               variant="outline"
               size="lg"
               className="rounded-full border-primary/30 hover:border-primary hover:bg-primary/10 transition-all duration-300"
-              onClick={() => window.open("./public/Henrique_Silveira_Curriculum.pdf", "_blank")}
+              onClick={() =>
+                window.open("/Henrique_Silveira_Curriculum.pdf", "_blank")
+              } 
             >
               <FileText className="w-5 h-5 mr-2" />
               Baixar CV
