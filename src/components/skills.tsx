@@ -10,7 +10,7 @@ const skills = [
   { name: "Node.js", level: 45, color: "from-green-600 to-green-700" },
   { name: "React", level: 60, color: "from-cyan-400 to-cyan-500" },
   { name: "TypeScript", level: 55, color: "from-blue-600 to-indigo-600" },
-  { name: "Python", level: 30, color: "from-blue-700 to-yellow-500" },
+  { name: "Python", level: 90, color: "from-blue-700 to-yellow-500" },
   { name: "PHP", level: 20, color: "from-indigo-400 to-indigo-500" },
   { name: "Git", level: 60, color: "from-red-500 to-red-600" },
   { name: "Github", level: 90, color: "from-gray-600 to-gray-400" },
