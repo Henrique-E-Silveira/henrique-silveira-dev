@@ -55,7 +55,7 @@ const projects = [
       "Comunicação assíncrona",
       "Boas práticas de Clean Architecture",
     ],
-    githubUrl: "#",
+    githubUrl: null as string | null,
     liveUrl: null,
     color: "from-gray-600 to-gray-400", 
   },
@@ -130,15 +130,19 @@ function ProjectCard({ project, index, inView }: ProjectCardProps) {
 
         {/* Actions */}
         <div className="flex space-x-3 pt-4 border-t border-border/50">
+          {project.githubUrl ? (
           <Button
             variant="outline"
             size="sm"
             className="flex-1 border-primary/30 hover:border-primary hover:bg-primary/10"
-            onClick={() => window.open(project.githubUrl, "_blank")}
+            onClick={() => window.open(project.githubUrl!, "_blank")}
           >
             <Github className="w-4 h-4 mr-2" />
             Código
           </Button>
+          ) : (
+            <span className="flex-1 text-center text-sm text-muted-foreground py-2">Em breve no GitHub</span>
+          )}
           {project.liveUrl && (
             <Button
               size="sm"
