@@ -38,6 +38,15 @@ export function Hero() {
             </div>
           </div>
 
+          {/* Availability Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full border border-primary/30 bg-primary/5 text-sm text-foreground/80">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-60 animate-ping"></span>
+              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-primary"></span>
+            </span>
+            Disponível para Estágio / Júnior em Back-end
+          </div>
+
           {/* Name and Title */}
           <h1 className="text-5xl md:text-7xl font-bold mb-4 text-shadow">
             <span className="gradient-text">Henrique Eduardo</span>
@@ -49,7 +58,7 @@ export function Hero() {
             className="text-xl md:text-2xl text-muted-foreground mb-2 animate-fade-in"
             style={{ animationDelay: "0.2s" }}
           >
-            18 anos • Desenvolvedor Back-end
+            19 anos • Desenvolvedor Back-end
           </p>
 
           {/* Impact Statement */}
@@ -63,7 +72,7 @@ export function Hero() {
             </span>
             .
             <br />
-            Pronto para contribuir como estagiário em projetos inovadores.
+            Pronto para contribuir como estagiário ou desenvolvedor júnior.
           </p>
 
           {/* Social Links */}
