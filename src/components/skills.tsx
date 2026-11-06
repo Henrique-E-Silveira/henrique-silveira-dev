@@ -1,6 +1,7 @@
 import { useInView } from "react-intersection-observer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { getYearsStudying } from "@/lib/dates";
 import { Code2, Database, Wrench, Layout } from "lucide-react";
 
 const categories = [
@@ -53,7 +54,7 @@ export function Skills() {
           </div>
 
           <div className="mt-12 grid grid-cols-3 gap-6 max-w-2xl mx-auto text-center">
-            {[["20+", "Tecnologias"], ["3+", "Anos estudando"], ["∞", "Aprendizado"]].map(([n, l]) => (
+            {[["20+", "Tecnologias"], [`${getYearsStudying()}+`, "Anos estudando"], ["∞", "Aprendizado"]].map(([n, l]) => (
               <div key={l}>
                 <div className="text-3xl font-bold gradient-text">{n}</div>
                 <p className="text-sm text-muted-foreground">{l}</p>

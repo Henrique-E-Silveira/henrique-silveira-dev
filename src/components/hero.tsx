@@ -1,5 +1,6 @@
 import { ArrowDown, FileText, Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { getAge } from "@/lib/dates";
 import henriqueProfile from "@/assets/henrique-profile.jpg";
 
 export function Hero() {
@@ -58,7 +59,7 @@ export function Hero() {
             className="text-xl md:text-2xl text-muted-foreground mb-2 animate-fade-in"
             style={{ animationDelay: "0.2s" }}
           >
-            19 anos • Desenvolvedor Back-end
+            {getAge()} anos • Desenvolvedor Back-end
           </p>
 
           {/* Impact Statement */}
