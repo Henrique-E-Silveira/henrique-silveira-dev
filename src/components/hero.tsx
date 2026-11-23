@@ -45,7 +45,7 @@ export function Hero() {
               <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-60 animate-ping"></span>
               <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-primary"></span>
             </span>
-            Disponível para Estágio / Júnior em Back-end
+            Disponível para Estágio em Software
           </div>
 
           {/* Name and Title */}
@@ -73,7 +73,7 @@ export function Hero() {
             </span>
             .
             <br />
-            Pronto para contribuir como estagiário ou desenvolvedor júnior.
+            Pronto para contribuir como estagiário em uma equipe de software.
           </p>
 
           {/* Social Links */}
